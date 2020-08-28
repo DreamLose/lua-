@@ -1132,22 +1132,22 @@ end
 
 
 function startTask()
-	taskManager = TaskManager.new()
-		taskManager:run()
-	-- local status, err = xpcall(function()
-	-- 	taskManager = TaskManager.new()
+	-- taskManager = TaskManager.new()
 	-- 	taskManager:run()
-	-- end,
-	-- function( )
-	-- 	writeASOLog(debug.traceback())
-	-- end
-	-- )
+	local status, err = xpcall(function()
+		taskManager = TaskManager.new()
+		taskManager:run()
+	end,
+	function( )
+		writeASOLog(debug.traceback())
+	end
+	)
 
-	-- if not status then
-	-- 	writeASOLog('进入status')
-	-- 	-- VPNManager.removeVPN(true)
+	if not status then
+		writeASOLog('进入status')
+		-- VPNManager.removeVPN(true)
 
-	-- end
+	end
 end
 
 

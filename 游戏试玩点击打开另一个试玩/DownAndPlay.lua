@@ -19,7 +19,7 @@ xieyiCh = {0x000000, "407|-2|0x2f2f2e,407|1|0xf7f9f4,407|4|0x000000,432|13|0xf5f
 agreeBtn = {0x007aff, "0|4|0xf6f6f7,0|7|0x007aff,0|10|0xf5f5f7,5|28|0xf5f5f7,8|28|0x007aff,35|10|0x007aff,36|23|0x007aff,48|26|0x007aff,50|27|0xf6f6f8", 90, 580, 37, 749, 129,'同意'}
 agreeBtn1 = {0x1283ff, "0|2|0xf8f8f8,0|5|0x007aff,4|20|0x007aff,5|26|0xf8f8f8,9|26|0x007aff,35|-3|0x077dff,35|-5|0xf7f7f7,49|25|0x007aff,49|27|0xf8f8f8", 90, 105, 482, 693, 844,'同意1'}
 canNotDownTu = {'conNotDown_6.png',81,457,693,992,30000000}
-
+canNotDownEnTu = {'conNotDownEn_6.png',92,415,721,929,30000000}
 local function addNewAppToFakeTweak(bundleID)
 	local YWFakeTweakPath = '/Library/MobileSubstrate/DynamicLibraries/YWFakeTweak.plist'
 	require 'ts'
@@ -122,7 +122,7 @@ function downloadAppAndPlay(bundleId,clickCode,newBid,currentAPPBidTab)
 			mSleep(2000)
 		elseif c_pic(agreeBtn1) or c_pic(agreeBtn) then
 			mSleep(2000)
-		elseif f_pic(canNotDown) or f_pic(canNotDownNew) or f_tu(canNotDownTu) then
+		elseif f_pic(canNotDown) or f_pic(canNotDownNew) or f_tu(canNotDownTu) or f_tu(canNotDownEnTu) then
 			toast('无法下载app:bid = '..newBid)
 			mSleep(2000)
 			click(230,760)
@@ -201,7 +201,7 @@ function downloadAppAndPlay(bundleId,clickCode,newBid,currentAPPBidTab)
 				return 5008,newBid
 			end
 			return 5012,newBid
-		elseif f_pic(canNotDown) or f_pic(canNotDownNew) or f_tu(canNotDownTu) then
+		elseif f_pic(canNotDown) or f_pic(canNotDownNew) or f_tu(canNotDownTu) or f_tu(canNotDownEnTu) then
 			toast('无法下载app:bid = '..newBid)
 			mSleep(2000)
 			click(230,760)

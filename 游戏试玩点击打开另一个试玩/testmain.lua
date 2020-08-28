@@ -1,5 +1,5 @@
 
--- snapshot("conNotDown_6.png", 269, 569, 495, 625);
+-- snapshot("conNotDownEn_6.png", 173, 542, 578, 616);
 
 -- dialog('结束')
 -- do

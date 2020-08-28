@@ -72,43 +72,34 @@ function InterfaceFunc: clickGuanggao(bid,isClickAppAdToStore)
 			toast('点击HomeBtn')
 			mSleep(3000)
 		elseif f_tu(feiji) then
-			-- click(math.random(340,590),math.random(1010,1116))
-			click(math.random(80,270),math.random(830,1340))
+			click(math.random(340,590),math.random(1010,1116))
+			-- click(math.random(80,270),math.random(830,1340))
 			mSleep(2000)
 			if not f_tu(feiji) then
 				isClickad = true
 			end
-		elseif not isClickAppAdToStore and isClickad and not f_tu(feiji) and not f_tu(homeBtn) then
-			toast('只看广告')
-			-- 只看广告
-			delay(40)
-			return 5010
-		elseif c_pic(blueDown) or c_pic(redDown) or c_pic(fangqi) or c_pic(fangqiNew) then
-			mSleep(1000)
-		elseif c_pic(gotoAppStore) or c_pic(goStoreDown) then
-			mSleep(1000)
-		elseif isClickad and not f_tu(feiji) then
+		elseif isClickad and not f_tu(feiji) and not f_tu(homeBtn) then
 			toast('开始点击广告')
 			if not isClickAppAdToStore then
 				toast('只看广告')
 				-- 只看广告
 				delay(40)
 				return 5010
-			end
-			-- local orient = getDeviceOrient()
-			-- if orient.app ~= 0 then
-			-- 	toast('调整屏幕方向')
-			-- 	setDeviceOrient(0)
-			-- end
-			if indexN % 3 == 0 then
-				click(math.random(34,721),math.random(1295,1330))
-			elseif indexN % 3 == 1 then
-				click(math.random(172,674),math.random(478,898))
+			elseif c_pic(blueDown) or c_pic(redDown) or c_pic(fangqi) or c_pic(fangqiNew) then
+				mSleep(1000)
+			elseif c_pic(gotoAppStore) or c_pic(goStoreDown) then
+				mSleep(1000)
 			else
-				click(math.random(274,504),math.random(606,966))
+				if indexN % 3 == 0 then
+					click(math.random(34,721),math.random(1295,1330))
+				elseif indexN % 3 == 1 then
+					click(math.random(172,674),math.random(478,898))
+				else
+					click(math.random(274,504),math.random(606,966))
+				end
+				mSleep(5000)
+				indexN = indexN + 1
 			end
-			mSleep(5000)
-			indexN = indexN + 1
 						
 		else 
 			delay(3)
